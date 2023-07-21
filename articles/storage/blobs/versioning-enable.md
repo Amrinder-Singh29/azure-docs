@@ -110,6 +110,9 @@ To list a blob's versions in the Azure portal:
 
     :::image type="content" source="media/versioning-enable/portal-list-deleted-versions.png" alt-text="Screenshot showing how to list soft-deleted versions in Azure portal.":::
 
+> [!IMPORTANT]
+> Currently, once you configure the retention, there will be a rule created in the lifecycle management policy to delete the older version based on the retention period set. Thereafter, the settings shall not be visible in the data protection options. In case you want to change the retention period, you will have to delete the rule, which shall make the settings visible for editing again. In case you have any other rule already to delete the versions, then also this setting for configuring the retention period shall not appear.
+
 # [PowerShell](#tab/powershell)
 
 To list a blob's versions with PowerShell, call the [Get-AzStorageBlob](/powershell/module/az.storage/get-azstorageblob) command with the `-IncludeVersion` parameter:
